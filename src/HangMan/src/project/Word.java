@@ -13,7 +13,7 @@ public class Word extends JPanel{
 	
 	public Word() {
 		//판넬등 기본정보 초기화
-		tf=new JTextField(10);
+		tf=new JTextField(20);
 		add(new JLabel("Word: "));
 		add(tf);
 		tf.setEditable(false);

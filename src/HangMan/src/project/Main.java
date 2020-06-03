@@ -53,7 +53,7 @@ class Main extends JFrame implements ActionListener {
 	  
 	  setVisible(true);
 	  
-	  file= new File("word.txt");//IO 객체 생성
+	  file= new File("src/HangMan/src/project/word.txt");//IO 객체 생성
 	  wordP.setWord(file.getFword());//IO!!!!!!!!
 	  chanceP.setChance(6);// 기회6번
 	  
@@ -75,12 +75,12 @@ class Main extends JFrame implements ActionListener {
       repaint();
       
       if(chanceP.missChance()==0){//2.카운트가 0이면->실패
-      JOptionPane.showMessageDialog(this, "실패하셨습니다!"+wordP.getWord());
+      JOptionPane.showMessageDialog(this, "실패 하셨습니다!"+"\n정답: "+ wordP.getWord());
       restart();//꺼진다. 또는 다시시작?? //논의 필요!
       }
     }
     else if(wordP.success()==true){
-     JOptionPane.showMessageDialog(this, "성공하셨습니다!");
+     JOptionPane.showMessageDialog(this, "정답! "+wordP.getWord());
       restart();//꺼진다. 또는 다시시작?? //논의 필요!
     }
    

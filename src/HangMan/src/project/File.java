@@ -17,15 +17,17 @@ import java.util.Random;
 		    BufferedReader br = new BufferedReader(new FileReader(fname));
 		    int i;
 		    for( i =0;i<100;i++){
-		      //fword[i]=br.readLine();//파일한줄씩 읽어 배열저장
-		      if( (fword[i]=br.readLine())==null)break;
+		      fword[i]=br.readLine();//파일한줄씩 읽어 배열저장
+		      if(fword[i]==null) 
+		    	  break;
 
 		    }
 		    wordNum=i;//단어의 개수는 i개
 		    br.close();//저장
 		  }
 		  catch(IOException e){
-		    System.out.println("IOException!!!!!!!!!!");
+		    System.out.println("IOException!!!!!!!!!!"+e.getMessage());
+		    //e.printStackTrace();
 		    System.exit(0);
 
 
