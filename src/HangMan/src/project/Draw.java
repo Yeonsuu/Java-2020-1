@@ -61,22 +61,24 @@ class Draw extends JPanel{
 		g.fillOval(60, 350, 280, 120); // stage
 	}
 
-	public boolean drawnext() { 
-		failcount++;
-		
-		boolean drawnext = false;
-    if(failcount <6){
-    	drawnext = false;
-    }
-    else{ // 그림이 다 그려지면 true return
-      drawnext = true;
-    }
-    return drawnext;
-		
-		
-	}
-	  public void reset() {
-					  
-		  }
+  public boolean drawnext() {   
+	   failcount++;
+	   //System.out.println(failcount); // count 찍어보기
+	   boolean drawnext = false;
+	   
+	    if(failcount <=6){
+	       drawnext = false;
+	    }
+	    if(failcount>6){ // 그림이 다 그려지면 true return
+	      drawnext = true;
+	      reset();
+	    }
+	    return drawnext;
+	      
+	      
+	   }
+	     public void reset() { 
+	         failcount =0;
+	         repaint();
+	        }
 }
-	
