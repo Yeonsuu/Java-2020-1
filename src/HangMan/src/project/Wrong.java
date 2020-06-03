@@ -26,7 +26,8 @@ class Wrong extends JPanel{
 	    //wrong = new char[26];
 	    //index = 1;
 	  }
-
+///#########################3
+	  
 	  public void addw(char c) { //라벨에 보여지는 틀린것들을 c 로 추가한다
 	    flag[c-'a'] = true;
 	    wr.setText(scan());
@@ -53,14 +54,14 @@ class Wrong extends JPanel{
 	    	
 	  }
 	  
-	  //public void reset() {
-		// wr.setText(" ");
-		 //for(int i =0; i< 26;i++) {
-			// flag[i]=false;
+	  public void reset() {
+		 wr.setText(" ");
+		 for(int i =0; i< 26;i++) {
+		 flag[i]=false;
 			 
-		 //}
+		 }
 		  
-	  //}
+	  }
 
 	 
 	}

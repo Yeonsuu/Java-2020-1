@@ -13,7 +13,7 @@ class Draw extends JPanel{
 		
 	}
 	public static int failcount=0;
-	
+	//override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		//failcount = 5; // 다른 클래스에서 count 
@@ -63,6 +63,7 @@ class Draw extends JPanel{
 
 	public boolean drawnext() { 
 		failcount++;
+		
 		boolean drawnext = false;
     if(failcount <6){
     	drawnext = false;
@@ -74,10 +75,8 @@ class Draw extends JPanel{
 		
 		
 	}
-	  //public void reset() {
-		//	failcount =0;
-			//repaint();
-			  
-		  //}
+	  public void reset() {
+					  
+		  }
 }
 	
