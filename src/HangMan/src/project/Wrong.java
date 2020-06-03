@@ -13,7 +13,7 @@ class Wrong extends JPanel{
 	  public Wrong() {
 	    add(new JLabel("Wrong: "));
 	    add(wr = new JLabel()); // 처음 띄워지는 형태
-
+	    
 	    flag = new boolean[26];
 
 	    //ans = new char[answer.length()];
@@ -38,14 +38,14 @@ class Wrong extends JPanel{
 	    String returns;
 	    
 	    for (i=0;i<26;i++)
-	    	if(flag[i]==true)
-	    		len++;
+	    	if(flag[i])
+	    		len++; //
 	    char[] ch = new char [len*2];
 	    for(i=j;i<26;i++)
 	    	if(flag[i]) {
 	    		ch[j]=(char)('a'+i);
 	    		j++;
-	    		ch[j]=' ';
+	    		ch[j]=',';
 	    		j++;
 	    	}
 	    returns=new String (ch);
@@ -53,14 +53,14 @@ class Wrong extends JPanel{
 	    	
 	  }
 	  
-	  public void reset() {
-		 wr.setText(" ");
-		 for(int i =0; i< 26;i++) {
-			 flag[i]=false;
+	  //public void reset() {
+		// wr.setText(" ");
+		 //for(int i =0; i< 26;i++) {
+			// flag[i]=false;
 			 
-		 }
+		 //}
 		  
-	  }
+	  //}
 
 	 
 	}

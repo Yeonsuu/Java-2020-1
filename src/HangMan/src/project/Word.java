@@ -27,11 +27,11 @@ public class Word extends JPanel{
 		//맞출 단어 보내기, 블랭크 프린트 초기화
 		this.word = word; //file에서 가져옴
 		length = word.length();
-		arr=new char[length];
+		arr=new char[length*2];
 		
-		for(int i=0;i<length;i++) {
+		for(int i=0;i<length*2;i++) {
 			arr[i]='_';
-			arr[i+1]=' ';
+			arr[i++]=' ';
 		}
 		
 		
@@ -44,7 +44,7 @@ public class Word extends JPanel{
 	public boolean matchOne(char c) {
 		//c가 단어에 포함되어 있는지 확인 -t,f
 		 boolean match = false;
-		for(int i=0;i<length;i++) {
+		for(int i=0;i<length*2;i++) {
 			if(word.charAt(i)==c) {
 				arr[i]=c;
 				match=true;

@@ -5,16 +5,17 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
 
-import javax.swing.JPanel;
+import javax.swing.*;
 
 
 class Draw extends JPanel{
 	public Draw() {
+		
 	}
 	public static int failcount=0;
 	
-	public void paint(Graphics g) {
-		super.paint(g);
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
 		//failcount = 5; // 다른 클래스에서 count 
 		base(g);
 		DrawHangMan(g);
@@ -61,9 +62,10 @@ class Draw extends JPanel{
 	}
 
 	public boolean drawnext() { 
+		failcount++;
 		boolean drawnext = false;
     if(failcount <6){
-      failcount++;
+    	drawnext = false;
     }
     else{ // 그림이 다 그려지면 true return
       drawnext = true;
@@ -72,10 +74,10 @@ class Draw extends JPanel{
 		
 		
 	}
-	  public void reset() {
-			failcount =0;
-			repaint();
+	  //public void reset() {
+		//	failcount =0;
+			//repaint();
 			  
-		  }
+		  //}
 }
 	
