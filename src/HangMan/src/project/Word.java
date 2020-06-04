@@ -3,21 +3,27 @@ package HangMan.src.project;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import java.awt.Font;
 
 public class Word extends JPanel{
 	private String word;
-	private int wlength;
+	private int wlength;// 단어의 길이
+	private int alength;//arr의 길이
 	private JTextField tf;
 	private char [] arr;//블랭크 또는 알파벳 저장하는 arr
-	private int alength;
+	private JLabel wordLabel;
+
 	
 	public Word() {
 		//판넬등 기본정보 초기화
-		tf=new JTextField(20);
-		add(new JLabel("Word: "));
+		tf=new JTextField(12);
+		tf.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 27));
+		add(wordLabel=new JLabel("Word: "));
+		wordLabel.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 28));
 		add(tf);
 		tf.setEditable(false);
 		tf.setHorizontalAlignment(JTextField.CENTER);
+		
 		
 	}
 

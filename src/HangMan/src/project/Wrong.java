@@ -1,30 +1,23 @@
 package HangMan.src.project;
 
+import java.awt.Font;
+
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 class Wrong extends JPanel{
 	  private JLabel wr;
 	  private boolean flag[]; // 정답이 포함하는 알파벳 = true
-	  //private char ans[]; // 정답을 갖는 char 배열
-	  //private char wrong[]; // 틀린 글자를 일정 형식에 맞게 보관하는 배열
-	  //private int index;
+	  private JLabel wrongLabel;
 
 	  public Wrong() {
-	    add(new JLabel("Wrong: "));
+	    add(wrongLabel =new JLabel("Wrong: "));
+	    wrongLabel.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 28));
 	    add(wr = new JLabel()); // 처음 띄워지는 형태
+	    wr.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 28));
 	    
 	    flag = new boolean[26];
 
-	    //ans = new char[answer.length()];
-	    //ans = answer.toCharArray();
-	  
-	  //  for(int i = 0; i < answer.length(); i++) {
-	    //  flag[(int)ans[i] - 97] = true; // 정답인 알파벳을 true로 체크
-	    //}
-
-	    //wrong = new char[26];
-	    //index = 1;
 	  }
 ///#########################3
 	  
@@ -46,7 +39,7 @@ class Wrong extends JPanel{
 	    	if(flag[i]) {
 	    		ch[j]=(char)('a'+i);
 	    		j++;
-	    		ch[j]=',';
+	    		ch[j]=' ';
 	    		j++;
 	    	}
 	    returns=new String (ch);

@@ -26,14 +26,17 @@ class Main extends JFrame implements ActionListener {
 	  
 	  setSize(1000,600);
 	  setDefaultCloseOperation(EXIT_ON_CLOSE);
-	  setTitle("GGangMan");
+	  setTitle("GGang Man");
 	  
 	  wordP = new Word();
 	  chanceP= new Chance();
 	  
 	  JPanel enter = new JPanel();
-	  enter.add(new JLabel("Guess alphabet: "));
+	  JLabel label = new JLabel("Guess ");
+	  label.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 28));
+	  enter.add(label);
 	  enter.add(tf = new JTextField(1));
+	  tf.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 28));
 	  tf.addActionListener(this);
 	  
 	  JPanel whole = new JPanel();
@@ -44,12 +47,21 @@ class Main extends JFrame implements ActionListener {
 	  whole.add(wrongP);
 	  whole.add(chanceP);
 	  
-	  setLayout(new BoxLayout(c,BoxLayout.X_AXIS ));
-	  add(whole);
+	  getContentPane().setLayout(new BoxLayout(c,BoxLayout.X_AXIS ));
+	  getContentPane().add(whole);
 	  drawP = new Draw();
-	  add(drawP);
+	  getContentPane().add(drawP);
+	  drawP.setLayout(null);
 	  
-	  whole.setBorder(new LineBorder(Color.BLUE,5,true));
+	  JLabel hwa = new JLabel("화려한 조명이 나를 감싸네");
+	  hwa.setFont(new Font("굴림", Font.BOLD, 15));
+	  hwa.setBounds(107, 448, 206, 15);
+	  drawP.add(hwa);
+	  
+	  whole.setBorder(new LineBorder(Color.BLUE,4,true));
+	  whole.setPreferredSize(new Dimension(150,400));
+
+	
 	  
 	  setVisible(true);
 	  
@@ -75,12 +87,12 @@ class Main extends JFrame implements ActionListener {
       repaint();
       
       if(chanceP.missChance()==0){//2.카운트가 0이면->실패
-      JOptionPane.showMessageDialog(this, "실패 하셨습니다!"+"\n정답: "+ wordP.getWord());
+      JOptionPane.showMessageDialog(this, "You failed!"+"\n Answer: "+ wordP.getWord());
       restart();//꺼진다. 또는 다시시작?? //논의 필요!
       }
     }
     else if(wordP.success()==true){
-     JOptionPane.showMessageDialog(this, "정답! "+wordP.getWord());
+     JOptionPane.showMessageDialog(this, "Success! "+"\n Answer: "+wordP.getWord());
       restart();//꺼진다. 또는 다시시작?? //논의 필요!
     }
    

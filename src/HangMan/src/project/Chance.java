@@ -2,6 +2,8 @@ package HangMan.src.project;
 
 import javax.swing.JPanel;
 
+import java.awt.Font;
+
 import javax.swing.*; // GUI 프로그래밍에 필요한 개발 툴킷 불러오기.
 
 
@@ -9,12 +11,14 @@ import javax.swing.*; // GUI 프로그래밍에 필요한 개발 툴킷 불러오기.
 	 
 	 private JLabel ch_label;
 	 private int ch_cnt;
+	 private JLabel chanceLabel;
 	 
 	 Chance() {  // 패널에 "Chances : x)" 이라는 텍스트를 보여주기;
 		 
-		 add ( new JLabel ("Chances: ")); // 맨 밑 게임 패널에 보여줄 "Chances: " 텍스트.
-		 
+		 add ( chanceLabel=new JLabel ("Chances: ")); // 맨 밑 게임 패널에 보여줄 "Chances: " 텍스트.
+		 chanceLabel.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 28));
 		 add ( ch_label = new JLabel ()); // 초기값 = null;
+		 ch_label.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 28));
 		 
 	 }
 	 
