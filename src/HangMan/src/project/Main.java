@@ -20,11 +20,11 @@ class Main extends JFrame implements ActionListener {
   private JTextField tf;
   private File file;
 
-  //»ı¼ºÀÚ - ÇÁ·¹ÀÓµî gui setting
+  //ìƒì„±ì - í”„ë ˆì„ë“± gui setting
   public Main(){
 	  Container c = this.getContentPane();
 	  
-	  setSize(1000,600);
+	  setSize(1000,550);
 	  setDefaultCloseOperation(EXIT_ON_CLOSE);
 	  setTitle("GGang Man");
 	  
@@ -53,8 +53,8 @@ class Main extends JFrame implements ActionListener {
 	  getContentPane().add(drawP);
 	  drawP.setLayout(null);
 	  
-	  JLabel hwa = new JLabel("È­·ÁÇÑ Á¶¸íÀÌ ³ª¸¦ °¨½Î³×");
-	  hwa.setFont(new Font("±¼¸²", Font.BOLD, 15));
+	  JLabel hwa = new JLabel("í™”ë ¤í•œ ì¡°ëª…ì´ ë‚˜ë¥¼ ê°ì‹¸ë„¤");
+	  hwa.setFont(new Font("êµ´ë¦¼", Font.BOLD, 15));
 	  hwa.setBounds(107, 448, 206, 15);
 	  drawP.add(hwa);
 	  
@@ -65,35 +65,35 @@ class Main extends JFrame implements ActionListener {
 	  
 	  setVisible(true);
 	  
-	  file= new File("src/HangMan/src/project/word.txt");//IO °´Ã¼ »ı¼º
+	  file= new File("src/HangMan/src/project/word.txt");//IO ê°ì²´ ìƒì„±
 	  wordP.setWord(file.getFword());//IO!!!!!!!!
-	  chanceP.setChance(6);// ±âÈ¸6¹ø
+	  chanceP.setChance(6);// ê¸°íšŒ6ë²ˆ
 	  
 	
   }
   
 
 
-//¾×¼Ç¸®½º³Ê¸¦ Ã³¸®ÇÔ ,¿£ÅÍ´©¸£¸é
+//ì•¡ì…˜ë¦¬ìŠ¤ë„ˆë¥¼ ì²˜ë¦¬í•¨ ,ì—”í„°ëˆ„ë¥´ë©´
   public void actionPerformed(ActionEvent e){
     char c = tf.getText().charAt(0);
     tf.setText("");
     
 
     if(wordP.matchOne(c)==false){
-      //Æ²¸° ¾ËÆÄºª ÀÔ·ÂÇÏ¸é -> 1worng¿¡ Ãß°¡, 2chance -- ,3drawP¿¡¼­ Ãß°¡
+      //í‹€ë¦° ì•ŒíŒŒë²³ ì…ë ¥í•˜ë©´ -> 1worngì— ì¶”ê°€, 2chance -- ,3drawPì—ì„œ ì¶”ê°€
       wrongP.addw(c);//1.
       drawP.drawnext();//3.
       repaint();
       
-      if(chanceP.missChance()==0){//2.Ä«¿îÆ®°¡ 0ÀÌ¸é->½ÇÆĞ
+      if(chanceP.missChance()==0){//2.ì¹´ìš´íŠ¸ê°€ 0ì´ë©´->ì‹¤íŒ¨
       JOptionPane.showMessageDialog(this, "You failed!"+"\n Answer: "+ wordP.getWord());
-      restart();//²¨Áø´Ù. ¶Ç´Â ´Ù½Ã½ÃÀÛ?? //³íÀÇ ÇÊ¿ä!
+      restart();//êº¼ì§„ë‹¤. ë˜ëŠ” ë‹¤ì‹œì‹œì‘?? //ë…¼ì˜ í•„ìš”!
       }
     }
     else if(wordP.success()==true){
      JOptionPane.showMessageDialog(this, "Success! "+"\n Answer: "+wordP.getWord());
-      restart();//²¨Áø´Ù. ¶Ç´Â ´Ù½Ã½ÃÀÛ?? //³íÀÇ ÇÊ¿ä!
+      restart();//êº¼ì§„ë‹¤. ë˜ëŠ” ë‹¤ì‹œì‹œì‘?? //ë…¼ì˜ í•„ìš”!
     }
    
   }
