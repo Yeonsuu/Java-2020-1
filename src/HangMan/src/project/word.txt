@@ -16,4 +16,5 @@ effect
 swag
 schedule
 java
+project
 professor
